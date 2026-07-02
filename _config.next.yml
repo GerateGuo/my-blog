@@ -76,3 +76,11 @@ relative_link: false
 # Custom Styles - 液态玻璃效果
 # ---------------------------------------------------------------
 custom_css: /css/liquid-glass.css
+
+# ---------------------------------------------------------------
+# Custom Files - 自定义文件注入
+# ---------------------------------------------------------------
+custom_file_path:
+  head: source/_data/head.njk
+  footer: source/_data/footer.njk
+  bodyEnd: source/_data/body-end.njk
