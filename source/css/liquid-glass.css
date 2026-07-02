@@ -4,7 +4,7 @@
 
 /* 全局背景 - 图片背景 */
 body {
-  background: url('/images/bg.jpg') center center / cover no-repeat fixed !important;
+  background: url('../images/bg.jpg') center center / cover no-repeat fixed !important;
   min-height: 100vh;
 }
 
