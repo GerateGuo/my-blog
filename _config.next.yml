@@ -1,0 +1,78 @@
+# ---------------------------------------------------------------
+# Theme Settings
+# ---------------------------------------------------------------
+
+# Dark Mode
+darkmode: true
+
+# Schemes
+scheme: Muse
+# scheme: Mist
+# scheme: Pisces
+# scheme: Gemini
+
+# ---------------------------------------------------------------
+# Menu Settings
+# ---------------------------------------------------------------
+
+menu:
+  home: / || fa fa-home
+  about: /about/ || fa fa-user
+  photography: /photography/ || fa fa-camera
+  projects: /projects/ || fa fa-code
+  archives: /archives/ || fa fa-archive
+  tags: /tags/ || fa fa-tags
+  # categories: /categories/ || fa fa-th
+
+# ---------------------------------------------------------------
+# Social Settings
+# ---------------------------------------------------------------
+
+social:
+  GitHub: https://github.com/GerateGuo || fab fa-github
+  E-Mail: mailto:vitacookie@qq.com || fa fa-envelope
+
+# ---------------------------------------------------------------
+# Content Settings
+# ---------------------------------------------------------------
+
+# Enable/Disable table of content
+toc:
+  enable: true
+  number: true
+  max_depth: 3
+
+# ---------------------------------------------------------------
+# Miscellaneous
+# ---------------------------------------------------------------
+
+# Font Settings
+font:
+  enable: true
+  host: https://fonts.googleapis.com
+  global:
+    external: true
+    family: Noto Sans SC
+    size: 1
+
+# Back to top button
+back2top:
+  enable: true
+  sidebar: false
+  scrollpercent: true
+
+# Reading progress
+reading_progress:
+  enable: true
+  position: top
+  color: "#666"
+  height: 3px
+
+# Image settings for photography
+post_asset_folder: true
+relative_link: false
+
+# ---------------------------------------------------------------
+# Custom Styles - 液态玻璃效果
+# ---------------------------------------------------------------
+custom_css: /css/liquid-glass.css
