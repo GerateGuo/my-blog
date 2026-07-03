@@ -401,6 +401,17 @@ blockquote p {
   display: none !important;
 }
 
+/* Show busuanzi visitor/view stats in footer */
+.busuanzi-count #busuanzi_container_site_uv,
+.busuanzi-count #busuanzi_container_site_pv {
+  display: inline !important;
+}
+
+/* Show page view count in post meta */
+#busuanzi_container_page_pv {
+  display: inline !important;
+}
+
 .copyright,
 .powered-by {
   color: rgba(255, 255, 255, 0.6) !important;
