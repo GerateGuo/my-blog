@@ -397,6 +397,10 @@ blockquote p {
   padding: 30px 0 !important;
 }
 
+.with-love {
+  display: none !important;
+}
+
 .copyright,
 .powered-by {
   color: rgba(255, 255, 255, 0.6) !important;
