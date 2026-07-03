@@ -4,36 +4,63 @@ date: 2026-07-02 12:59:01
 type: "photography"
 ---
 
+<script>
+  // 让 NexT 的 PJAX 不劫持这个页面的视频播放
+  document.addEventListener('DOMContentLoaded', function () {
+    var videos = document.querySelectorAll('video');
+    videos.forEach(function (v) {
+      v.setAttribute('playsinline', '');
+      v.setAttribute('webkit-playsinline', '');
+      v.removeAttribute('disablePictureInPicture');
+    });
+  });
+</script>
+
 # 摄影作品集
 
-这里展示我的摄影作品。每一张照片都记录了一个独特的瞬间。
+这里按组展示我的摄影作品。每一张照片都记录了一个独特的瞬间。
 
-## 使用方法
+---
 
-1. 将照片放入 `source/images/photography/` 目录
-2. 在下方添加照片信息，使用以下格式：
+## 人像
 
-```markdown
-{% gallery %}
-  ![照片标题](/images/photography/your-photo.jpg)
-{% endgallery %}
-```
+![人像-01](/images/photography/人像/1783067072355.jpg)
+*窗边人像*
 
-或者使用 Markdown 格式：
+![人像-02](/images/photography/人像/1783067079910.jpg)
+*光影人像*
 
-```markdown
-![照片标题](/images/photography/your-photo.jpg)
-*照片标题 - 拍摄地点*
-```
+![人像-03](/images/photography/人像/(80).jpg)
+*胶片感人像*
 
-## 示例展示
+---
 
-<!-- 在此添加你的摄影作品 -->
+## 瞎拍拍
 
-<!-- 示例：
-![风景照片](/images/photography/landscape.jpg)
-*日落时分的海边*
+![随手拍-01](/images/photography/瞎拍拍/1783055272564.jpg)
+*日常随手拍*
 
-![城市夜景](/images/photography/city-night.jpg)
-*城市霓虹*
--->
+![随手拍-02](/images/photography/瞎拍拍/1783068389138.jpg)
+*街头一隅*
+
+![随手拍-03](/images/photography/瞎拍拍/1783068389229.jpg)
+*瞬间*
+
+![随手拍-04](/images/photography/瞎拍拍/1783068389254.jpg)
+*碎片*
+
+![随手拍-05](/images/photography/瞎拍拍/1783069212517.jpg)
+*记录*
+
+---
+
+## 航拍
+
+![航拍-01](/images/photography/航拍/1783068389192.jpg)
+*高空视角*
+
+<video controls preload="metadata" playsinline webkit-playsinline style="max-width: 100%; margin-top: 12px;">
+  <source src="/my-blog/images/photography/航拍/dji_export_20260703_165651_1783068997900_mastershots.mp4" type="video/mp4">
+  你的浏览器不支持 video 标签。
+</video>
+*航拍短片*
