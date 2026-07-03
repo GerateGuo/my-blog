@@ -1,0 +1,2 @@
+source/images/photography/** filter=lfs diff=lfs merge=lfs -text
+public/images/photography/** filter=lfs diff=lfs merge=lfs -text
