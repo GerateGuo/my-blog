@@ -21,9 +21,9 @@
 <script class="next-config" data-name="main" type="application/json">{"hostname":"gerateguo.github.io","root":"/my-blog/","images":"/my-blog/images","scheme":"Muse","darkmode":true,"version":"8.28.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/my-blog/js/config.js" defer></script>
 
     <meta name="description" content="概述最近完成了《大语言模型驱动的智能信息检索技术及应用》课程的期末实验，在 Pyserini 框架下系统对比了四种检索模型——BM25（传统稀疏）、BGE（稠密Bi-encoder）、ColBERT（后期交互）和 SPLADE-v3（学习型稀疏）——在四个标准数据集上的表现。 实验环境   设备 配置    Windows Ryzen 9950X (16C&#x2F;32T), 32GB RAM,">
-<meta property="og:type" content="article">
+<meta property="og:type" content="website">
 <meta property="og:title" content="Pyserini 信息检索实验：BM25&#x2F;BGE&#x2F;ColBERT&#x2F;SPLADE-v3 四模型对比">
-<meta property="og:url" content="https://gerateguo.github.io/2026/07/15/IR-Experiment-Report/index.html">
+<meta property="og:url" content="https://gerateguo.github.io/ir-experiment/index.html">
 <meta property="og:site_name" content="Gerate&#39;s Blog">
 <meta property="og:description" content="概述最近完成了《大语言模型驱动的智能信息检索技术及应用》课程的期末实验，在 Pyserini 框架下系统对比了四种检索模型——BM25（传统稀疏）、BGE（稠密Bi-encoder）、ColBERT（后期交互）和 SPLADE-v3（学习型稀疏）——在四个标准数据集上的表现。 实验环境   设备 配置    Windows Ryzen 9950X (16C&#x2F;32T), 32GB RAM,">
 <meta property="og:locale" content="zh_CN">
@@ -40,13 +40,14 @@
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://gerateguo.github.io/2026/07/15/IR-Experiment-Report/">
+<link rel="canonical" href="https://gerateguo.github.io/ir-experiment/">
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://gerateguo.github.io/2026/07/15/IR-Experiment-Report/","path":"2026/07/15/IR-Experiment-Report/","title":"Pyserini 信息检索实验：BM25/BGE/ColBERT/SPLADE-v3 四模型对比"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-CN","comments":true,"permalink":"https://gerateguo.github.io/ir-experiment/index.html","path":"ir-experiment/index.html","title":"Pyserini 信息检索实验：BM25/BGE/ColBERT/SPLADE-v3 四模型对比"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Pyserini 信息检索实验：BM25/BGE/ColBERT/SPLADE-v3 四模型对比 | Gerate's Blog</title>
+<title>Pyserini 信息检索实验：BM25/BGE/ColBERT/SPLADE-v3 四模型对比 | Gerate's Blog
+</title>
   
 
 
@@ -151,16 +152,16 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/my-blog/archives/">
-          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-count">2</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">1</span>
         <span class="site-state-item-name">分类</span>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">标签</span>
       </div>
   </nav>
@@ -184,82 +185,27 @@
 
     </div>
 
-    <div class="main-inner post posts-expand">
+    <div class="main-inner page posts-expand">
 
 
-  
+    
+    
+    
+    <div class="post-block" lang="zh-CN"><header class="post-header">
 
+<h1 class="post-title" itemprop="name headline">Pyserini 信息检索实验：BM25/BGE/ColBERT/SPLADE-v3 四模型对比
+</h1>
 
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://gerateguo.github.io/2026/07/15/IR-Experiment-Report/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/my-blog/images/avatar.gif">
-      <meta itemprop="name" content="Gerate Guo">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Gerate's Blog">
-      <meta itemprop="description" content="记录生活、技术与创意">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="Pyserini 信息检索实验：BM25&#x2F;BGE&#x2F;ColBERT&#x2F;SPLADE-v3 四模型对比 | Gerate's Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          Pyserini 信息检索实验：BM25/BGE/ColBERT/SPLADE-v3 四模型对比
-        </h1>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2026-07-15 18:00:00" itemprop="dateCreated datePublished" datetime="2026-07-15T18:00:00+08:00">2026-07-15</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2026-07-17 00:49:03" itemprop="dateModified" datetime="2026-07-17T00:49:03+08:00">2026-07-17</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/my-blog/categories/%E9%A1%B9%E7%9B%AE/" itemprop="url" rel="index"><span itemprop="name">项目</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
-      <span class="post-meta-item-icon">
-        <i class="far fa-eye"></i>
-      </span>
-      <span class="post-meta-item-text">阅读次数：</span>
-      <span id="busuanzi_value_page_pv"></span>
-    </span>
+<div class="post-meta-container">
 </div>
 
-        </div>
-      </header>
+</header>
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody"><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>最近完成了《大语言模型驱动的智能信息检索技术及应用》课程的期末实验，在 Pyserini 框架下系统对比了四种检索模型——BM25（传统稀疏）、BGE（稠密Bi-encoder）、ColBERT（后期交互）和 SPLADE-v3（学习型稀疏）——在四个标准数据集上的表现。</p>
+      
+      
+      
+      <div class="post-body">
+          <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>最近完成了《大语言模型驱动的智能信息检索技术及应用》课程的期末实验，在 Pyserini 框架下系统对比了四种检索模型——BM25（传统稀疏）、BGE（稠密Bi-encoder）、ColBERT（后期交互）和 SPLADE-v3（学习型稀疏）——在四个标准数据集上的表现。</p>
 <h2 id="实验环境"><a href="#实验环境" class="headerlink" title="实验环境"></a>实验环境</h2><table>
 <thead>
 <tr>
@@ -322,41 +268,14 @@
 <h3 id="5-领域迁移问题"><a href="#5-领域迁移问题" class="headerlink" title="5. 领域迁移问题"></a>5. 领域迁移问题</h3><p>tct_colbert-v2 在 MS MARCO 上 MAP&#x3D;0.3509，但迁移到医学领域降为 0.08，说明领域微调至关重要。</p>
 <h2 id="完整报告"><a href="#完整报告" class="headerlink" title="完整报告"></a>完整报告</h2><p>完整的实验报告和代码在 GitHub 上：<br><a target="_blank" rel="noopener" href="https://github.com/GerateGuo/IR_Assignment">https://github.com/GerateGuo/IR_Assignment</a></p>
 
+      </div>
+      
+      
+      
     </div>
 
     
     
-    
-
-    <footer class="post-footer">
-          <div class="post-tags">
-              <a href="/my-blog/tags/%E4%BF%A1%E6%81%AF%E6%A3%80%E7%B4%A2/" rel="tag"># 信息检索</a>
-              <a href="/my-blog/tags/Pyserini/" rel="tag"># Pyserini</a>
-              <a href="/my-blog/tags/BM25/" rel="tag"># BM25</a>
-              <a href="/my-blog/tags/BGE/" rel="tag"># BGE</a>
-              <a href="/my-blog/tags/ColBERT/" rel="tag"># ColBERT</a>
-              <a href="/my-blog/tags/SPLADE/" rel="tag"># SPLADE</a>
-              <a href="/my-blog/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" rel="tag"># 深度学习</a>
-          </div>
-
-        
-
-          <div class="post-nav">
-            <div class="post-nav-item">
-                <a href="/my-blog/2026/07/02/hello-world/" rel="prev" title="Hello World">
-                  <i class="fa fa-angle-left"></i> Hello World
-                </a>
-            </div>
-            <div class="post-nav-item">
-            </div>
-          </div>
-    </footer>
-  </article>
-</div>
-
-
-
-
 
 
 </div>
