@@ -142,16 +142,16 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/my-blog/archives/">
-          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-count">3</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">分类</span>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">标签</span>
       </div>
   </nav>
@@ -176,6 +176,152 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://gerateguo.github.io/2026/07/15/IR-Experiment-Report/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/my-blog/images/avatar.gif">
+      <meta itemprop="name" content="Gerate Guo">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Gerate's Blog">
+      <meta itemprop="description" content="记录生活、技术与创意">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content=" | Gerate's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/my-blog/2026/07/15/IR-Experiment-Report/" class="post-title-link" itemprop="url">Pyserini 信息检索实验：BM25/BGE/ColBERT/SPLADE-v3 四模型对比</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2026-07-15 18:00:00" itemprop="dateCreated datePublished" datetime="2026-07-15T18:00:00+08:00">2026-07-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2026-07-17 00:44:21" itemprop="dateModified" datetime="2026-07-17T00:44:21+08:00">2026-07-17</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/my-blog/categories/%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">技术</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>最近完成了《大语言模型驱动的智能信息检索技术及应用》课程的期末实验，在 Pyserini 框架下系统对比了四种检索模型——BM25（传统稀疏）、BGE（稠密Bi-encoder）、ColBERT（后期交互）和 SPLADE-v3（学习型稀疏）——在四个标准数据集上的表现。</p>
+<h2 id="实验环境"><a href="#实验环境" class="headerlink" title="实验环境"></a>实验环境</h2><table>
+<thead>
+<tr>
+<th align="left">设备</th>
+<th align="left">配置</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>Windows</strong></td>
+<td align="left">Ryzen 9950X (16C&#x2F;32T), 32GB RAM, RTX 5070 Ti 12GB</td>
+</tr>
+<tr>
+<td align="left"><strong>Mac M5</strong></td>
+<td align="left">Apple Silicon M5, 24GB 统一内存</td>
+</tr>
+</tbody></table>
+<h2 id="实验结果"><a href="#实验结果" class="headerlink" title="实验结果"></a>实验结果</h2><h3 id="总体对比（MAP-NDCG-10）"><a href="#总体对比（MAP-NDCG-10）" class="headerlink" title="总体对比（MAP &#x2F; NDCG@10）"></a>总体对比（MAP &#x2F; NDCG@10）</h3><table>
+<thead>
+<tr>
+<th align="left">数据集</th>
+<th align="center">BM25</th>
+<th align="center">BGE</th>
+<th align="center">ColBERT</th>
+<th align="center">SPLADE-v3</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>MS MARCO</strong></td>
+<td align="center">0.1926 &#x2F; 0.2630</td>
+<td align="center"><strong>0.3261(MRR)</strong></td>
+<td align="center">—</td>
+<td align="center">0.0531(MRR)</td>
+</tr>
+<tr>
+<td align="left"><strong>TREC-COVID</strong></td>
+<td align="center">0.1871 &#x2F; 0.6695</td>
+<td align="center"><strong>0.2581 &#x2F; 0.8461</strong></td>
+<td align="center">0.0803 &#x2F; <strong>0.7601</strong></td>
+<td align="center">0.1633 &#x2F; 0.1264</td>
+</tr>
+<tr>
+<td align="left"><strong>nfcorpus</strong></td>
+<td align="center">0.1577 &#x2F; 0.3382</td>
+<td align="center">0.1998 &#x2F; 0.3757</td>
+<td align="center">0.1185 &#x2F; 0.2705</td>
+<td align="center"><strong>0.4152</strong> &#x2F; 0.1772</td>
+</tr>
+<tr>
+<td align="left"><strong>quora</strong></td>
+<td align="center">0.7470 &#x2F; 0.8173</td>
+<td align="center"><strong>0.8568 &#x2F; 0.9093</strong></td>
+<td align="center">0.7113 &#x2F; 0.7939</td>
+<td align="center">0.7778 &#x2F; 0.3186</td>
+</tr>
+</tbody></table>
+<h2 id="关键发现"><a href="#关键发现" class="headerlink" title="关键发现"></a>关键发现</h2><h3 id="1-BGE-稠密检索全面最优"><a href="#1-BGE-稠密检索全面最优" class="headerlink" title="1. BGE 稠密检索全面最优"></a>1. BGE 稠密检索全面最优</h3><p>BGE 在所有数据集上一致优于 BM25，提升幅度 15%~77%。在 MS MARCO 上通过重排序策略（BM25 top-100 + BGE 重排）实现了 MRR&#x3D;0.3261，远超 BM25 的 0.184。</p>
+<h3 id="2-SPLADE-v3-高召回高速度"><a href="#2-SPLADE-v3-高召回高速度" class="headerlink" title="2. SPLADE-v3 高召回高速度"></a>2. SPLADE-v3 高召回高速度</h3><p>SPLADE-v3 在 nfcorpus 上 MAP&#x3D;0.4152（BM25 的 2.6 倍），索引仅 1.8MB，1 秒跑完 323 查询。但 NDCG@10 偏低，属于典型的”高召回、低精度排序”模型。</p>
+<h3 id="3-ColBERT-优化经验"><a href="#3-ColBERT-优化经验" class="headerlink" title="3. ColBERT 优化经验"></a>3. ColBERT 优化经验</h3><p>通过 L2 归一化、MPS float16 混合精度和批量预编码，NDCG@10 从 0.55 提升到 0.76（+39%）。</p>
+<h3 id="4-多线程性能"><a href="#4-多线程性能" class="headerlink" title="4. 多线程性能"></a>4. 多线程性能</h3><p>BM25 多线程搜索：16 线程共享 searcher 实现 4.5x 加速（225s → 50s），32 线程收益递减至 5.0x。</p>
+<h3 id="5-领域迁移问题"><a href="#5-领域迁移问题" class="headerlink" title="5. 领域迁移问题"></a>5. 领域迁移问题</h3><p>tct_colbert-v2 在 MS MARCO 上 MAP&#x3D;0.3509，但迁移到医学领域降为 0.08，说明领域微调至关重要。</p>
+<h2 id="完整报告"><a href="#完整报告" class="headerlink" title="完整报告"></a>完整报告</h2><p>完整的实验报告和代码在 GitHub 上：<br><a target="_blank" rel="noopener" href="https://github.com/GerateGuo/IR_Assignment">https://github.com/GerateGuo/IR_Assignment</a></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 

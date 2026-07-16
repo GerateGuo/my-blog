@@ -20,27 +20,33 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"gerateguo.github.io","root":"/my-blog/","images":"/my-blog/images","scheme":"Muse","darkmode":true,"version":"8.28.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/my-blog/js/config.js" defer></script>
 
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+    <meta name="description" content="概述最近完成了《大语言模型驱动的智能信息检索技术及应用》课程的期末实验，在 Pyserini 框架下系统对比了四种检索模型——BM25（传统稀疏）、BGE（稠密Bi-encoder）、ColBERT（后期交互）和 SPLADE-v3（学习型稀疏）——在四个标准数据集上的表现。 实验环境   设备 配置    Windows Ryzen 9950X (16C&#x2F;32T), 32GB RAM,">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="https://gerateguo.github.io/2026/07/02/hello-world/index.html">
+<meta property="og:title" content="Pyserini 信息检索实验：BM25&#x2F;BGE&#x2F;ColBERT&#x2F;SPLADE-v3 四模型对比">
+<meta property="og:url" content="https://gerateguo.github.io/2026/07/15/IR-Experiment-Report/index.html">
 <meta property="og:site_name" content="Gerate&#39;s Blog">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="概述最近完成了《大语言模型驱动的智能信息检索技术及应用》课程的期末实验，在 Pyserini 框架下系统对比了四种检索模型——BM25（传统稀疏）、BGE（稠密Bi-encoder）、ColBERT（后期交互）和 SPLADE-v3（学习型稀疏）——在四个标准数据集上的表现。 实验环境   设备 配置    Windows Ryzen 9950X (16C&#x2F;32T), 32GB RAM,">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2026-07-02T08:34:18.002Z">
-<meta property="article:modified_time" content="2026-07-02T08:34:18.002Z">
+<meta property="article:published_time" content="2026-07-15T10:00:00.000Z">
+<meta property="article:modified_time" content="2026-07-16T16:44:21.744Z">
 <meta property="article:author" content="Gerate Guo">
-<meta property="article:tag" content="blog, photography, projects">
+<meta property="article:tag" content="BGE">
+<meta property="article:tag" content="BM25">
+<meta property="article:tag" content="ColBERT">
+<meta property="article:tag" content="Pyserini">
+<meta property="article:tag" content="SPLADE">
+<meta property="article:tag" content="信息检索">
+<meta property="article:tag" content="深度学习">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://gerateguo.github.io/2026/07/02/hello-world/">
+<link rel="canonical" href="https://gerateguo.github.io/2026/07/15/IR-Experiment-Report/">
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://gerateguo.github.io/2026/07/02/hello-world/","path":"2026/07/02/hello-world/","title":"Hello World"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://gerateguo.github.io/2026/07/15/IR-Experiment-Report/","path":"2026/07/15/IR-Experiment-Report/","title":"Pyserini 信息检索实验：BM25/BGE/ColBERT/SPLADE-v3 四模型对比"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Hello World | Gerate's Blog</title>
+<title>Pyserini 信息检索实验：BM25/BGE/ColBERT/SPLADE-v3 四模型对比 | Gerate's Blog</title>
   
 
 
@@ -132,7 +138,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A6%82%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E9%AA%8C%E7%8E%AF%E5%A2%83"><span class="nav-number">2.</span> <span class="nav-text">实验环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E9%AA%8C%E7%BB%93%E6%9E%9C"><span class="nav-number">3.</span> <span class="nav-text">实验结果</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%BB%E4%BD%93%E5%AF%B9%E6%AF%94%EF%BC%88MAP-NDCG-10%EF%BC%89"><span class="nav-number">3.1.</span> <span class="nav-text">总体对比（MAP &#x2F; NDCG@10）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E9%94%AE%E5%8F%91%E7%8E%B0"><span class="nav-number">4.</span> <span class="nav-text">关键发现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-BGE-%E7%A8%A0%E5%AF%86%E6%A3%80%E7%B4%A2%E5%85%A8%E9%9D%A2%E6%9C%80%E4%BC%98"><span class="nav-number">4.1.</span> <span class="nav-text">1. BGE 稠密检索全面最优</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-SPLADE-v3-%E9%AB%98%E5%8F%AC%E5%9B%9E%E9%AB%98%E9%80%9F%E5%BA%A6"><span class="nav-number">4.2.</span> <span class="nav-text">2. SPLADE-v3 高召回高速度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-ColBERT-%E4%BC%98%E5%8C%96%E7%BB%8F%E9%AA%8C"><span class="nav-number">4.3.</span> <span class="nav-text">3. ColBERT 优化经验</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%80%A7%E8%83%BD"><span class="nav-number">4.4.</span> <span class="nav-text">4. 多线程性能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-%E9%A2%86%E5%9F%9F%E8%BF%81%E7%A7%BB%E9%97%AE%E9%A2%98"><span class="nav-number">4.5.</span> <span class="nav-text">5. 领域迁移问题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%8C%E6%95%B4%E6%8A%A5%E5%91%8A"><span class="nav-number">5.</span> <span class="nav-text">完整报告</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -189,7 +195,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://gerateguo.github.io/2026/07/02/hello-world/">
+    <link itemprop="mainEntityOfPage" href="https://gerateguo.github.io/2026/07/15/IR-Experiment-Report/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/my-blog/images/avatar.gif">
@@ -202,12 +208,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="Hello World | Gerate's Blog">
+      <meta itemprop="name" content="Pyserini 信息检索实验：BM25&#x2F;BGE&#x2F;ColBERT&#x2F;SPLADE-v3 四模型对比 | Gerate's Blog">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Hello World
+          Pyserini 信息检索实验：BM25/BGE/ColBERT/SPLADE-v3 四模型对比
         </h1>
 
         <div class="post-meta-container">
@@ -218,7 +224,23 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2026-07-02 16:34:18" itemprop="dateCreated datePublished" datetime="2026-07-02T16:34:18+08:00">2026-07-02</time>
+      <time title="创建时间：2026-07-15 18:00:00" itemprop="dateCreated datePublished" datetime="2026-07-15T18:00:00+08:00">2026-07-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2026-07-17 00:44:21" itemprop="dateModified" datetime="2026-07-17T00:44:21+08:00">2026-07-17</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/my-blog/categories/%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">技术</span></a>
+        </span>
     </span>
 
   
@@ -237,19 +259,68 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+    <div class="post-body" itemprop="articleBody"><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>最近完成了《大语言模型驱动的智能信息检索技术及应用》课程的期末实验，在 Pyserini 框架下系统对比了四种检索模型——BM25（传统稀疏）、BGE（稠密Bi-encoder）、ColBERT（后期交互）和 SPLADE-v3（学习型稀疏）——在四个标准数据集上的表现。</p>
+<h2 id="实验环境"><a href="#实验环境" class="headerlink" title="实验环境"></a>实验环境</h2><table>
+<thead>
+<tr>
+<th align="left">设备</th>
+<th align="left">配置</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>Windows</strong></td>
+<td align="left">Ryzen 9950X (16C&#x2F;32T), 32GB RAM, RTX 5070 Ti 12GB</td>
+</tr>
+<tr>
+<td align="left"><strong>Mac M5</strong></td>
+<td align="left">Apple Silicon M5, 24GB 统一内存</td>
+</tr>
+</tbody></table>
+<h2 id="实验结果"><a href="#实验结果" class="headerlink" title="实验结果"></a>实验结果</h2><h3 id="总体对比（MAP-NDCG-10）"><a href="#总体对比（MAP-NDCG-10）" class="headerlink" title="总体对比（MAP &#x2F; NDCG@10）"></a>总体对比（MAP &#x2F; NDCG@10）</h3><table>
+<thead>
+<tr>
+<th align="left">数据集</th>
+<th align="center">BM25</th>
+<th align="center">BGE</th>
+<th align="center">ColBERT</th>
+<th align="center">SPLADE-v3</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>MS MARCO</strong></td>
+<td align="center">0.1926 &#x2F; 0.2630</td>
+<td align="center"><strong>0.3261(MRR)</strong></td>
+<td align="center">—</td>
+<td align="center">0.0531(MRR)</td>
+</tr>
+<tr>
+<td align="left"><strong>TREC-COVID</strong></td>
+<td align="center">0.1871 &#x2F; 0.6695</td>
+<td align="center"><strong>0.2581 &#x2F; 0.8461</strong></td>
+<td align="center">0.0803 &#x2F; <strong>0.7601</strong></td>
+<td align="center">0.1633 &#x2F; 0.1264</td>
+</tr>
+<tr>
+<td align="left"><strong>nfcorpus</strong></td>
+<td align="center">0.1577 &#x2F; 0.3382</td>
+<td align="center">0.1998 &#x2F; 0.3757</td>
+<td align="center">0.1185 &#x2F; 0.2705</td>
+<td align="center"><strong>0.4152</strong> &#x2F; 0.1772</td>
+</tr>
+<tr>
+<td align="left"><strong>quora</strong></td>
+<td align="center">0.7470 &#x2F; 0.8173</td>
+<td align="center"><strong>0.8568 &#x2F; 0.9093</strong></td>
+<td align="center">0.7113 &#x2F; 0.7939</td>
+<td align="center">0.7778 &#x2F; 0.3186</td>
+</tr>
+</tbody></table>
+<h2 id="关键发现"><a href="#关键发现" class="headerlink" title="关键发现"></a>关键发现</h2><h3 id="1-BGE-稠密检索全面最优"><a href="#1-BGE-稠密检索全面最优" class="headerlink" title="1. BGE 稠密检索全面最优"></a>1. BGE 稠密检索全面最优</h3><p>BGE 在所有数据集上一致优于 BM25，提升幅度 15%~77%。在 MS MARCO 上通过重排序策略（BM25 top-100 + BGE 重排）实现了 MRR&#x3D;0.3261，远超 BM25 的 0.184。</p>
+<h3 id="2-SPLADE-v3-高召回高速度"><a href="#2-SPLADE-v3-高召回高速度" class="headerlink" title="2. SPLADE-v3 高召回高速度"></a>2. SPLADE-v3 高召回高速度</h3><p>SPLADE-v3 在 nfcorpus 上 MAP&#x3D;0.4152（BM25 的 2.6 倍），索引仅 1.8MB，1 秒跑完 323 查询。但 NDCG@10 偏低，属于典型的”高召回、低精度排序”模型。</p>
+<h3 id="3-ColBERT-优化经验"><a href="#3-ColBERT-优化经验" class="headerlink" title="3. ColBERT 优化经验"></a>3. ColBERT 优化经验</h3><p>通过 L2 归一化、MPS float16 混合精度和批量预编码，NDCG@10 从 0.55 提升到 0.76（+39%）。</p>
+<h3 id="4-多线程性能"><a href="#4-多线程性能" class="headerlink" title="4. 多线程性能"></a>4. 多线程性能</h3><p>BM25 多线程搜索：16 线程共享 searcher 实现 4.5x 加速（225s → 50s），32 线程收益递减至 5.0x。</p>
+<h3 id="5-领域迁移问题"><a href="#5-领域迁移问题" class="headerlink" title="5. 领域迁移问题"></a>5. 领域迁移问题</h3><p>tct_colbert-v2 在 MS MARCO 上 MAP&#x3D;0.3509，但迁移到医学领域降为 0.08，说明领域微调至关重要。</p>
+<h2 id="完整报告"><a href="#完整报告" class="headerlink" title="完整报告"></a>完整报告</h2><p>完整的实验报告和代码在 GitHub 上：<br><a target="_blank" rel="noopener" href="https://github.com/GerateGuo/IR_Assignment">https://github.com/GerateGuo/IR_Assignment</a></p>
 
     </div>
 
@@ -258,19 +329,25 @@
     
 
     <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/my-blog/tags/%E4%BF%A1%E6%81%AF%E6%A3%80%E7%B4%A2/" rel="tag"># 信息检索</a>
+              <a href="/my-blog/tags/Pyserini/" rel="tag"># Pyserini</a>
+              <a href="/my-blog/tags/BM25/" rel="tag"># BM25</a>
+              <a href="/my-blog/tags/BGE/" rel="tag"># BGE</a>
+              <a href="/my-blog/tags/ColBERT/" rel="tag"># ColBERT</a>
+              <a href="/my-blog/tags/SPLADE/" rel="tag"># SPLADE</a>
+              <a href="/my-blog/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" rel="tag"># 深度学习</a>
+          </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/my-blog/2026/07/02/Hello-World-0/" rel="prev" title="Hello World">
+                <a href="/my-blog/2026/07/02/hello-world/" rel="prev" title="Hello World">
                   <i class="fa fa-angle-left"></i> Hello World
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/my-blog/2026/07/15/IR-Experiment-Report/" rel="next" title="Pyserini 信息检索实验：BM25&#x2F;BGE&#x2F;ColBERT&#x2F;SPLADE-v3 四模型对比">
-                  Pyserini 信息检索实验：BM25/BGE/ColBERT/SPLADE-v3 四模型对比 <i class="fa fa-angle-right"></i>
-                </a>
             </div>
           </div>
     </footer>
