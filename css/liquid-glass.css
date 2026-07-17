@@ -267,13 +267,30 @@ a:hover {
   color: #ddd6fe !important;
 }
 
-/* 侧边栏 */
-.sidebar {
-  background: rgba(255, 255, 255, 0.03) !important;
-  backdrop-filter: blur(10px) !important;
-  border-radius: 20px !important;
-  padding: 20px !important;
-  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+/* 侧边栏 - 桌面端保持半透明 */
+@media (min-width: 992px) {
+  .sidebar {
+    background: rgba(255, 255, 255, 0.03) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    border-radius: 20px !important;
+    padding: 20px !important;
+    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+  }
+}
+
+/* 侧边栏 - 手机端增强可见度（避免只有灰色蒙版） */
+@media (max-width: 991px) {
+  .sidebar {
+    background: rgba(15, 15, 26, 0.92) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    border-right: 1px solid rgba(255, 255, 255, 0.08) !important;
+  }
+}
+
+.sidebar-inner {
+  color: rgba(255, 255, 255, 0.92) !important;
 }
 
 .sidebar-title {
@@ -541,10 +558,8 @@ blockquote p {
     margin-bottom: 15px !important;
   }
 
-  /* 侧边栏 - 移动端隐藏或折叠 */
-  .sidebar {
-    display: none !important;
-  }
+  /* 侧边栏 - 移动端随 toggle 显示 */
+  /* 不设置 display: none，由 theme 控制 sidebar-active 状态 */
 
   /* 代码块 */
   pre {
