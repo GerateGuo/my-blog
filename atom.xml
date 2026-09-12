@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <author>
+    <name>Gerate Guo</name>
+  </author>
+  <generator uri="https://hexo.io/">Hexo</generator>
+  <id>https://gerateguo.github.io/my-blog/</id>
+  <link href="https://gerateguo.github.io/my-blog/" rel="alternate"/>
+  <link href="https://gerateguo.github.io/my-blog/atom.xml" rel="self"/>
+  <rights>All rights reserved 2026, Gerate Guo</rights>
+  <subtitle>个人博客</subtitle>
+  <title>Gerate's Blog</title>
+  <updated>2026-09-12T15:24:09.409Z</updated>
+  <entry>
+    <author>
+      <name>Gerate Guo</name>
+    </author>
+    <content>
+      <![CDATA[<p>大家好，我是 Gerate。</p><p>这个博客记录我在技术学习和项目实践中的思考与收获，以及我的一些小小的兴趣爱好的记录，例如摄影照片，ai绘图，叫ai做的一些小项目等等。<br>当前主要关注的方向包括：</p><ul><li><strong>信息检索</strong>：探索传统检索模型（BM25）与深度学习检索模型（BGE、ColBERT、SPLADE）的对比与优化</li><li><strong>大语言模型应用</strong>：LLM 在实际项目和竞赛中的落地经验</li></ul><p>写博客的初衷很简单：学过的知识如果不整理输出，很快就会被遗忘。这里既是自己的知识库，也希望分享的经验能给同样在路上的你一点参考。</p><span id="more"></span><p><em>不要再让自己留下遗憾了，前面的你让自己留下的遗憾已经够多了。</em></p>]]>
+    </content>
+    <id>https://gerateguo.github.io/my-blog/2026/07/17/welcome/</id>
+    <link href="https://gerateguo.github.io/my-blog/2026/07/17/welcome/"/>
+    <published>2026-07-16T16:00:00.000Z</published>
+    <summary>
+      <![CDATA[<p>大家好，我是 Gerate。</p>
+<p>这个博客记录我在技术学习和项目实践中的思考与收获，以及我的一些小小的兴趣爱好的记录，例如摄影照片，ai绘图，叫ai做的一些小项目等等。<br>当前主要关注的方向包括：</p>
+<ul>
+<li><strong>信息检索</strong>：探索传统检索模型（BM25）与深度学习检索模型（BGE、ColBERT、SPLADE）的对比与优化</li>
+<li><strong>大语言模型应用</strong>：LLM 在实际项目和竞赛中的落地经验</li>
+</ul>
+<p>写博客的初衷很简单：学过的知识如果不整理输出，很快就会被遗忘。这里既是自己的知识库，也希望分享的经验能给同样在路上的你一点参考。</p>]]>
+    </summary>
+    <title>欢迎来到我的博客</title>
+    <updated>2026-09-12T15:24:09.409Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>Gerate Guo</name>
+    </author>
+    <category term="信息检索" scheme="https://gerateguo.github.io/my-blog/tags/%E4%BF%A1%E6%81%AF%E6%A3%80%E7%B4%A2/"/>
+    <category term="Pyserini" scheme="https://gerateguo.github.io/my-blog/tags/Pyserini/"/>
+    <category term="BM25" scheme="https://gerateguo.github.io/my-blog/tags/BM25/"/>
+    <category term="BGE" scheme="https://gerateguo.github.io/my-blog/tags/BGE/"/>
+    <category term="ColBERT" scheme="https://gerateguo.github.io/my-blog/tags/ColBERT/"/>
+    <category term="SPLADE" scheme="https://gerateguo.github.io/my-blog/tags/SPLADE/"/>
+    <content>
+      <![CDATA[<h2 id="实验背景"><a href="#实验背景" class="headerlink" title="实验背景"></a>实验背景</h2><p>《大语言模型驱动的智能信息检索技术及应用》期末实验，在 Pyserini 框架下对比 BM25、BGE、ColBERT、SPLADE-v3 四种模型。前两天已在 BEIR 三个小数据集（TREC-COVID、nfcorpus、quora）上完成了三模型对比，并新增了 SPLADE-v3。</p><p>今天是实验的最后一天，重点是攻克 MS MARCO（880 万文档、6980 查询），并完成多线程优化、BGE 重排序和 ColBERT 优化实验。</p><span id="more"></span><h2 id="7月14日成果回顾"><a href="#7月14日成果回顾" class="headerlink" title="7月14日成果回顾"></a>7月14日成果回顾</h2><h3 id="BEIR-三个小数据集完整对比"><a href="#BEIR-三个小数据集完整对比" class="headerlink" title="BEIR 三个小数据集完整对比"></a>BEIR 三个小数据集完整对比</h3><table><thead><tr><th align="left">数据集</th><th align="center">BM25</th><th align="center">BGE</th><th align="center">ColBERT</th><th align="center">SPLADE-v3</th></tr></thead><tbody><tr><td align="left">TREC-COVID</td><td align="center">0.1871&#x2F;0.6695</td><td align="center">0.2581&#x2F;0.8461</td><td align="center">0.0803&#x2F;0.7601</td><td align="center">0.1633&#x2F;0.1264</td></tr><tr><td align="left">nfcorpus</td><td align="center">0.1577&#x2F;0.3382</td><td align="center">0.1998&#x2F;0.3757</td><td align="center">0.1185&#x2F;0.2705</td><td align="center">0.4152&#x2F;0.1772</td></tr><tr><td align="left">quora</td><td align="center">0.7470&#x2F;0.8173</td><td align="center">0.8568&#x2F;0.9093</td><td align="center">0.7113&#x2F;0.7939</td><td align="center">0.7778&#x2F;0.3186</td></tr></tbody></table><h3 id="MS-MARCO-早期探索"><a href="#MS-MARCO-早期探索" class="headerlink" title="MS MARCO 早期探索"></a>MS MARCO 早期探索</h3><ul><li>BM25 单线程（225s，MAP&#x3D;0.1926，NDCG@10&#x3D;0.2630）</li><li>BM25 16 线程共享 searcher（50s）</li><li>BGE Faiss 索引 25GB → Windows 32GB 无法完整加载</li><li>ColBERT Pyserini 无预建索引 → 暂未完成</li></ul><h2 id="7月15日关键突破"><a href="#7月15日关键突破" class="headerlink" title="7月15日关键突破"></a>7月15日关键突破</h2><h3 id="1-MS-MARCO-BGE-重排序策略"><a href="#1-MS-MARCO-BGE-重排序策略" class="headerlink" title="1. MS MARCO BGE 重排序策略"></a>1. MS MARCO BGE 重排序策略</h3><p>既然 25GB 的 Faiss 索引无法直接加载，采用了<strong>两阶段检索</strong>方案：</p><p><strong>第一阶段</strong>：BM25 快速检索，取 top-100 结果（50s）<br><strong>第二阶段</strong>：BGE 模型在 RTX 5070 Ti 上对 top-100 结果重排序</p><p>技术细节：</p><ul><li>BM25 top-100 去重后 601,000 篇 unique 文档</li><li>多线程取文档文本（16 线程，19 秒，初版 16 线程 2 分 23 秒）</li><li>GPU 批量编码 BGE-base-en-v1.5（batch_size&#x3D;256，47 分钟）</li><li>重排序 6980 查询仅需 1 秒</li></ul><p>最终结果：<strong>MRR@10 &#x3D; 0.3261</strong>，相比纯 BM25 的 MRR（0.184）<strong>提升 77%</strong>。</p><h3 id="2-MS-MARCO-SPLADE-v3"><a href="#2-MS-MARCO-SPLADE-v3" class="headerlink" title="2. MS MARCO SPLADE-v3"></a>2. MS MARCO SPLADE-v3</h3><p>SPLADE-v3 索引仅 2.8 GB，解决了 BGE 索引 25GB 无法加载的瓶颈：</p><ul><li>697,000 万文档的 SPLADE 索引下载（从 HuggingFace，2.8 GB）</li><li>6980 查询完成（41 秒，16 线程独立 searcher）</li><li>MRR@10 &#x3D; 0.0531（模型未经 MS MARCO 微调，零样本迁移效果有限）</li></ul><h3 id="3-多线程扩展实验"><a href="#3-多线程扩展实验" class="headerlink" title="3. 多线程扩展实验"></a>3. 多线程扩展实验</h3><table><thead><tr><th align="left">配置</th><th align="center">耗时</th><th align="left">模型</th><th align="center">加速比</th></tr></thead><tbody><tr><td align="left">1 线程</td><td align="center">225s</td><td align="left">BM25</td><td align="center">1x</td></tr><tr><td align="left">16 线程共享</td><td align="center">50.0s</td><td align="left">BM25</td><td align="center">4.5x</td></tr><tr><td align="left">32 线程共享</td><td align="center">45.3s</td><td align="left">BM25</td><td align="center">5.0x</td></tr><tr><td align="left">32 线程独立</td><td align="center">107.8s</td><td align="left">BM25</td><td align="center">2.1x</td></tr><tr><td align="left">16 线程独立</td><td align="center">40.8s</td><td align="left">SPLADE-v3</td><td align="center">—</td></tr><tr><td align="left">32 线程独立</td><td align="center">87.1s</td><td align="left">SPLADE-v3</td><td align="center">—</td></tr></tbody></table><p><strong>关键结论</strong>：共享 searcher 优于独立 searcher，16 线程性价比最高。32 线程收益递减（瓶颈在 Lucene 内部锁）。</p><h3 id="4-实验环境"><a href="#4-实验环境" class="headerlink" title="4. 实验环境"></a>4. 实验环境</h3><table><thead><tr><th align="left">设备</th><th align="left">配置</th><th align="left">用途</th></tr></thead><tbody><tr><td align="left">Windows</td><td align="left">Ryzen 9950X (16C&#x2F;32T), 32GB RAM, RTX 5070 Ti 12GB</td><td align="left">BM25、BGE、SPLADE</td></tr><tr><td align="left">Mac M5</td><td align="left">Apple Silicon M5 (16C), 24GB 统一内存</td><td align="left">ColBERT 重排序（MPS）</td></tr></tbody></table><h3 id="5-ColBERT-优化总结"><a href="#5-ColBERT-优化总结" class="headerlink" title="5. ColBERT 优化总结"></a>5. ColBERT 优化总结</h3><p>ColBERT（tct_colbert-v2）在 TREC-COVID 上的优化历程：</p><table><thead><tr><th align="left">版本</th><th align="center">NDCG@10</th><th align="left">关键优化</th></tr></thead><tbody><tr><td align="left">初始 CPU 版</td><td align="center">0.5477</td><td align="left">mean pool，FP32</td></tr><tr><td align="left">优化版</td><td align="center"><strong>0.7601</strong></td><td align="left">L2 归一化、MPS FP16、批量预编码</td></tr></tbody></table><p>提升幅度 <strong>+39%</strong>。tct_colbert-v2 在 MS MARCO 上官方 MAP&#x3D;0.3509，领域迁移导致效果下降。</p><h2 id="最终结果总览"><a href="#最终结果总览" class="headerlink" title="最终结果总览"></a>最终结果总览</h2><table><thead><tr><th align="left">数据集</th><th align="center">BM25</th><th align="center">BGE</th><th align="center">ColBERT</th><th align="center">SPLADE-v3</th></tr></thead><tbody><tr><td align="left">MS MARCO</td><td align="center">MAP&#x3D;0.1926</td><td align="center">MRR&#x3D;0.3261</td><td align="center">❌ 无索引</td><td align="center">MRR&#x3D;0.0531</td></tr><tr><td align="left">TREC-COVID</td><td align="center">MAP&#x3D;0.1871</td><td align="center">MAP&#x3D;0.2581</td><td align="center">NDCG&#x3D;0.7601</td><td align="center">MAP&#x3D;0.1633</td></tr><tr><td align="left">nfcorpus</td><td align="center">MAP&#x3D;0.1577</td><td align="center">MAP&#x3D;0.1998</td><td align="center">MAP&#x3D;0.1185</td><td align="center">MAP&#x3D;0.4152</td></tr><tr><td align="left">quora</td><td align="center">MAP&#x3D;0.7470</td><td align="center">MAP&#x3D;0.8568</td><td align="center">MAP&#x3D;0.7113</td><td align="center">MAP&#x3D;0.7778</td></tr></tbody></table><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>实验代码和完整报告在 GitHub：<a href="https://github.com/GerateGuo/IR_Assignment">GerateGuo&#x2F;IR_Assignment</a></p>]]>
+    </content>
+    <id>https://gerateguo.github.io/my-blog/2026/07/15/IR-Experiment-Log/</id>
+    <link href="https://gerateguo.github.io/my-blog/2026/07/15/IR-Experiment-Log/"/>
+    <published>2026-07-14T16:00:00.000Z</published>
+    <summary>
+      <![CDATA[<h2 id="实验背景"><a href="#实验背景" class="headerlink" title="实验背景"></a>实验背景</h2><p>《大语言模型驱动的智能信息检索技术及应用》期末实验，在 Pyserini 框架下对比 BM25、BGE、ColBERT、SPLADE-v3 四种模型。前两天已在 BEIR 三个小数据集（TREC-COVID、nfcorpus、quora）上完成了三模型对比，并新增了 SPLADE-v3。</p>
+<p>今天是实验的最后一天，重点是攻克 MS MARCO（880 万文档、6980 查询），并完成多线程优化、BGE 重排序和 ColBERT 优化实验。</p>]]>
+    </summary>
+    <title>信息检索期末实验完整记录 — MS MARCO 攻克与全程记录</title>
+    <updated>2026-09-12T15:24:11.983Z</updated>
+  </entry>
+</feed>
