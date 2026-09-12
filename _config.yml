@@ -13,7 +13,11 @@ timezone: Asia/Shanghai
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: https://gerateguo.github.io
+# 修改原因：本站部署在 GitHub Pages 的子路径 /my-blog/ 下（见下面的 root）。
+# Hexo 要求这种「项目站点」的 url 必须把子路径一并写进去，否则所有由
+# url + 路径 拼出来的绝对地址（页面 canonical、og:url、sitemap.xml、atom.xml）
+# 都会丢掉 /my-blog/ 前缀，指向 404 地址。root 保持 /my-blog/ 不变即可。
+url: https://gerateguo.github.io/my-blog
 root: /my-blog/
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -106,3 +110,30 @@ deploy:
   repo: https://github.com/GerateGuo/my-blog.git
   branch: gh-pages
   message: "Site updated: {{ now('YYYY-MM-DD HH:mm:ss') }}"
+
+# Sitemap（插件 hexo-generator-sitemap）
+# 修改原因：站点原本没有站点地图，搜索引擎收录只能靠爬链接，收录慢且不完整
+sitemap:
+  path: sitemap.xml
+  rel: false
+  tags: true
+  categories: true
+
+# Feed（插件 hexo-generator-feed）
+# 修改原因：原本没有订阅源，读者无法通过 RSS 阅读器订阅更新
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
+  hub:
+  content: true
+
+# 站内搜索索引（插件 hexo-generator-searchdb，NexT 的 local_search 依赖它）
+# 修改原因：不配这一段插件不会生成 search.xml，导航栏的搜索框点了会查不到东西
+search:
+  path: search.xml
+  field: post
+  content: true
+  format: html
+
+

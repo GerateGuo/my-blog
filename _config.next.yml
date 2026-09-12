@@ -33,6 +33,19 @@ social:
   E-Mail: mailto:vitacookie@qq.com || fa fa-envelope
 
 # ---------------------------------------------------------------
+# Search Settings
+# ---------------------------------------------------------------
+
+# 站内搜索（依赖 hexo-generator-searchdb）
+# 修改原因：站点原本没有搜索入口，文章多起来后只能靠浏览器翻页找内容
+local_search:
+  enable: true
+  trigger: auto
+  top_n_per_article: 1
+  unescape: true
+  preload: false
+
+# ---------------------------------------------------------------
 # Content Settings
 # ---------------------------------------------------------------
 

@@ -1,0 +1,11 @@
+# Hexo NexT 自定义语言覆盖（NexT v6.3.0+ 支持 source/_data/languages.yml）
+#
+# 修改原因：NexT 菜单文字取自 __('menu.' + 键名)，而主题自带的 zh-CN 语言包里
+# 只有 home/about/archives/categories/tags/search 这些键。photography 和 projects
+# 是本站自定义的菜单项，找不到对应键时会原样显示英文键名，导致导航出现
+# 「首页 · 关于 · photography · projects · 归档 · 标签」这种中英混排。
+# 这里补上这两个键的中文，避免去改 node_modules 里的主题文件（会被 npm update 覆盖）。
+zh-CN:
+  menu:
+    photography: 摄影
+    projects: 项目
