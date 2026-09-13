@@ -20,6 +20,7 @@ menu:
   about: /about/ || fa fa-user
   photography: /photography/ || fa fa-camera
   projects: /projects/ || fa fa-code
+  algorithm-design: /algorithm-design/ || fa fa-book
   archives: /archives/ || fa fa-archive
   tags: /tags/ || fa fa-tags
   # categories: /categories/ || fa fa-th
