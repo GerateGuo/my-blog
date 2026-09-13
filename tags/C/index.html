@@ -20,28 +20,25 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"gerateguo.github.io","root":"/my-blog/","images":"/my-blog/images","scheme":"Muse","darkmode":true,"version":"8.28.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/my-blog/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":true,"preload":false,"trigger":"auto"}}</script><script src="/my-blog/js/config.js" defer></script>
 
-    <meta name="description" content="概述最近完成了《大语言模型驱动的智能信息检索技术及应用》课程的期末实验，在 Pyserini 框架下系统对比了四种检索模型——BM25（传统稀疏）、BGE（稠密Bi-encoder）、ColBERT（后期交互）和 SPLADE-v3（学习型稀疏）——在四个标准数据集上的表现。 实验环境   设备 配置    Windows Ryzen 9950X (16C&#x2F;32T), 32GB RAM,">
+    <meta name="description" content="记录生活、技术与创意">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Pyserini 信息检索实验：BM25&#x2F;BGE&#x2F;ColBERT&#x2F;SPLADE-v3 四模型对比">
-<meta property="og:url" content="https://gerateguo.github.io/my-blog/ir-experiment/index.html">
+<meta property="og:title" content="Gerate&#39;s Blog">
+<meta property="og:url" content="https://gerateguo.github.io/my-blog/tags/C/index.html">
 <meta property="og:site_name" content="Gerate&#39;s Blog">
-<meta property="og:description" content="概述最近完成了《大语言模型驱动的智能信息检索技术及应用》课程的期末实验，在 Pyserini 框架下系统对比了四种检索模型——BM25（传统稀疏）、BGE（稠密Bi-encoder）、ColBERT（后期交互）和 SPLADE-v3（学习型稀疏）——在四个标准数据集上的表现。 实验环境   设备 配置    Windows Ryzen 9950X (16C&#x2F;32T), 32GB RAM,">
+<meta property="og:description" content="记录生活、技术与创意">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2026-07-15T10:00:00.000Z">
-<meta property="article:modified_time" content="2026-07-16T16:56:38.461Z">
 <meta property="article:author" content="Gerate Guo">
 <meta property="article:tag" content="blog, photography, projects">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://gerateguo.github.io/my-blog/ir-experiment/">
+<link rel="canonical" href="https://gerateguo.github.io/my-blog/tags/C/">
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-CN","comments":true,"permalink":"https://gerateguo.github.io/my-blog/ir-experiment/index.html","path":"ir-experiment/index.html","title":"Pyserini 信息检索实验：BM25/BGE/ColBERT/SPLADE-v3 四模型对比"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"tags/C/index.html","title":""}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Pyserini 信息检索实验：BM25/BGE/ColBERT/SPLADE-v3 四模型对比 | Gerate's Blog
-</title>
+<title>标签: C++ | Gerate's Blog</title>
   
 
 
@@ -150,7 +147,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+    <div class="sidebar-inner sidebar-overview-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -163,7 +160,6 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A6%82%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E9%AA%8C%E7%8E%AF%E5%A2%83"><span class="nav-number">2.</span> <span class="nav-text">实验环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E9%AA%8C%E7%BB%93%E6%9E%9C"><span class="nav-number">3.</span> <span class="nav-text">实验结果</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%BB%E4%BD%93%E5%AF%B9%E6%AF%94%EF%BC%88MAP-NDCG-10%EF%BC%89"><span class="nav-number">3.1.</span> <span class="nav-text">总体对比（MAP &#x2F; NDCG@10）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E9%94%AE%E5%8F%91%E7%8E%B0"><span class="nav-number">4.</span> <span class="nav-text">关键发现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-BGE-%E7%A8%A0%E5%AF%86%E6%A3%80%E7%B4%A2%E5%85%A8%E9%9D%A2%E6%9C%80%E4%BC%98"><span class="nav-number">4.1.</span> <span class="nav-text">1. BGE 稠密检索全面最优</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-SPLADE-v3-%E9%AB%98%E5%8F%AC%E5%9B%9E%E9%AB%98%E9%80%9F%E5%BA%A6"><span class="nav-number">4.2.</span> <span class="nav-text">2. SPLADE-v3 高召回高速度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-ColBERT-%E4%BC%98%E5%8C%96%E7%BB%8F%E9%AA%8C"><span class="nav-number">4.3.</span> <span class="nav-text">3. ColBERT 优化经验</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%80%A7%E8%83%BD"><span class="nav-number">4.4.</span> <span class="nav-text">4. 多线程性能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-%E9%A2%86%E5%9F%9F%E8%BF%81%E7%A7%BB%E9%97%AE%E9%A2%98"><span class="nav-number">4.5.</span> <span class="nav-text">5. 领域迁移问题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%8C%E6%95%B4%E6%8A%A5%E5%91%8A"><span class="nav-number">5.</span> <span class="nav-text">完整报告</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -210,98 +206,50 @@
 
     </div>
 
-    <div class="main-inner page posts-expand">
+    <div class="main-inner tag posts-collapse">
 
 
-    
-    
-    
-    <div class="post-block" lang="zh-CN"><header class="post-header">
-
-<h1 class="post-title" itemprop="name headline">Pyserini 信息检索实验：BM25/BGE/ColBERT/SPLADE-v3 四模型对比
-</h1>
-
-<div class="post-meta-container">
-</div>
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
-          <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>最近完成了《大语言模型驱动的智能信息检索技术及应用》课程的期末实验，在 Pyserini 框架下系统对比了四种检索模型——BM25（传统稀疏）、BGE（稠密Bi-encoder）、ColBERT（后期交互）和 SPLADE-v3（学习型稀疏）——在四个标准数据集上的表现。</p>
-<h2 id="实验环境"><a href="#实验环境" class="headerlink" title="实验环境"></a>实验环境</h2><table>
-<thead>
-<tr>
-<th align="left">设备</th>
-<th align="left">配置</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><strong>Windows</strong></td>
-<td align="left">Ryzen 9950X (16C&#x2F;32T), 32GB RAM, RTX 5070 Ti 12GB</td>
-</tr>
-<tr>
-<td align="left"><strong>Mac M5</strong></td>
-<td align="left">Apple Silicon M5, 24GB 统一内存</td>
-</tr>
-</tbody></table>
-<h2 id="实验结果"><a href="#实验结果" class="headerlink" title="实验结果"></a>实验结果</h2><h3 id="总体对比（MAP-NDCG-10）"><a href="#总体对比（MAP-NDCG-10）" class="headerlink" title="总体对比（MAP &#x2F; NDCG@10）"></a>总体对比（MAP &#x2F; NDCG@10）</h3><table>
-<thead>
-<tr>
-<th align="left">数据集</th>
-<th align="center">BM25</th>
-<th align="center">BGE</th>
-<th align="center">ColBERT</th>
-<th align="center">SPLADE-v3</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><strong>MS MARCO</strong></td>
-<td align="center">0.1926 &#x2F; 0.2630</td>
-<td align="center"><strong>0.3261(MRR)</strong></td>
-<td align="center">—</td>
-<td align="center">0.0531(MRR)</td>
-</tr>
-<tr>
-<td align="left"><strong>TREC-COVID</strong></td>
-<td align="center">0.1871 &#x2F; 0.6695</td>
-<td align="center"><strong>0.2581 &#x2F; 0.8461</strong></td>
-<td align="center">0.0803 &#x2F; <strong>0.7601</strong></td>
-<td align="center">0.1633 &#x2F; 0.1264</td>
-</tr>
-<tr>
-<td align="left"><strong>nfcorpus</strong></td>
-<td align="center">0.1577 &#x2F; 0.3382</td>
-<td align="center">0.1998 &#x2F; 0.3757</td>
-<td align="center">0.1185 &#x2F; 0.2705</td>
-<td align="center"><strong>0.4152</strong> &#x2F; 0.1772</td>
-</tr>
-<tr>
-<td align="left"><strong>quora</strong></td>
-<td align="center">0.7470 &#x2F; 0.8173</td>
-<td align="center"><strong>0.8568 &#x2F; 0.9093</strong></td>
-<td align="center">0.7113 &#x2F; 0.7939</td>
-<td align="center">0.7778 &#x2F; 0.3186</td>
-</tr>
-</tbody></table>
-<h2 id="关键发现"><a href="#关键发现" class="headerlink" title="关键发现"></a>关键发现</h2><h3 id="1-BGE-稠密检索全面最优"><a href="#1-BGE-稠密检索全面最优" class="headerlink" title="1. BGE 稠密检索全面最优"></a>1. BGE 稠密检索全面最优</h3><p>BGE 在所有数据集上一致优于 BM25，提升幅度 15%~77%。在 MS MARCO 上通过重排序策略（BM25 top-100 + BGE 重排）实现了 MRR&#x3D;0.3261，远超 BM25 的 0.184。</p>
-<h3 id="2-SPLADE-v3-高召回高速度"><a href="#2-SPLADE-v3-高召回高速度" class="headerlink" title="2. SPLADE-v3 高召回高速度"></a>2. SPLADE-v3 高召回高速度</h3><p>SPLADE-v3 在 nfcorpus 上 MAP&#x3D;0.4152（BM25 的 2.6 倍），索引仅 1.8MB，1 秒跑完 323 查询。但 NDCG@10 偏低，属于典型的”高召回、低精度排序”模型。</p>
-<h3 id="3-ColBERT-优化经验"><a href="#3-ColBERT-优化经验" class="headerlink" title="3. ColBERT 优化经验"></a>3. ColBERT 优化经验</h3><p>通过 L2 归一化、MPS float16 混合精度和批量预编码，NDCG@10 从 0.55 提升到 0.76（+39%）。</p>
-<h3 id="4-多线程性能"><a href="#4-多线程性能" class="headerlink" title="4. 多线程性能"></a>4. 多线程性能</h3><p>BM25 多线程搜索：16 线程共享 searcher 实现 4.5x 加速（225s → 50s），32 线程收益递减至 5.0x。</p>
-<h3 id="5-领域迁移问题"><a href="#5-领域迁移问题" class="headerlink" title="5. 领域迁移问题"></a>5. 领域迁移问题</h3><p>tct_colbert-v2 在 MS MARCO 上 MAP&#x3D;0.3509，但迁移到医学领域降为 0.08，说明领域微调至关重要。</p>
-<h2 id="完整报告"><a href="#完整报告" class="headerlink" title="完整报告"></a>完整报告</h2><p>完整的实验报告和代码在 GitHub 上：<br><a target="_blank" rel="noopener" href="https://github.com/GerateGuo/IR_Assignment">https://github.com/GerateGuo/IR_Assignment</a></p>
-
+  
+  
+  
+  <div class="post-block">
+    <div class="post-content">
+      <div class="collection-title">
+        <h1 class="collection-header">C++
+          <small>标签</small>
+        </h1>
       </div>
+
       
-      
-      
+    <div class="collection-year">
+      <span class="collection-header">2026</span>
     </div>
 
-    
-    
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+      <div class="post-meta-container">
+        <time itemprop="dateCreated"
+              datetime="2026-09-13T10:43:32+08:00"
+              content="2026-09-13">
+          09-13
+        </time>
+      </div>
 
+      <div class="post-title">
+          <a class="post-title-link" href="/my-blog/2026/09/13/Algorithm-Coding-Standards/" itemprop="url">
+            <span itemprop="name">大厂编码规范调研：我这学期要遵守的编码规则</span>
+          </a>
+      </div>
+
+      
+    </header>
+  </article>
+
+    </div>
+  </div>
+  
+  
+  
 
 </div>
   </main>
