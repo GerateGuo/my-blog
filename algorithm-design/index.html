@@ -20,15 +20,15 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"gerateguo.github.io","root":"/my-blog/","images":"/my-blog/images","scheme":"Muse","darkmode":true,"version":"8.28.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/my-blog/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":true,"preload":false,"trigger":"auto"}}</script><script src="/my-blog/js/config.js" defer></script>
 
-    <meta name="description" content="这门课的实验记录都放在这里，按实验顺序排。每次实验一篇，尽量把问题、思路、代码和跑出来的结果都写清楚——一方面是老师有要求，另一方面隔几周回头看，也能想起来当时是怎么想的。 实验记录   # 日期 实验主题 涉及算法 记录    01 2026-09-13 大厂编码规范调研：我这学期要遵守的编码规则 —（调研篇） 阅读   02 待更新 — — —     每篇写什么一份实验记录按这个顺序展开，缺">
+    <meta name="description" content="这门课的实验记录都放在这里，按实验顺序排。每次实验一篇，尽量把问题、思路、代码和跑出来的结果都写清楚——一方面是老师有要求，另一方面隔几周回头看，也能想起来当时是怎么想的。 实验记录   # 日期 实验主题 涉及算法 记录    01 2026-09-13 大厂编码规范调研：我这学期要遵守的编码规则 —（调研篇） 阅读   02 2026-10-13 分治法求第k小的数 分治、快速选择 阅读">
 <meta property="og:type" content="website">
 <meta property="og:title" content="算法设计与分析">
 <meta property="og:url" content="https://gerateguo.github.io/my-blog/algorithm-design/index.html">
 <meta property="og:site_name" content="Gerate&#39;s Blog">
-<meta property="og:description" content="这门课的实验记录都放在这里，按实验顺序排。每次实验一篇，尽量把问题、思路、代码和跑出来的结果都写清楚——一方面是老师有要求，另一方面隔几周回头看，也能想起来当时是怎么想的。 实验记录   # 日期 实验主题 涉及算法 记录    01 2026-09-13 大厂编码规范调研：我这学期要遵守的编码规则 —（调研篇） 阅读   02 待更新 — — —     每篇写什么一份实验记录按这个顺序展开，缺">
+<meta property="og:description" content="这门课的实验记录都放在这里，按实验顺序排。每次实验一篇，尽量把问题、思路、代码和跑出来的结果都写清楚——一方面是老师有要求，另一方面隔几周回头看，也能想起来当时是怎么想的。 实验记录   # 日期 实验主题 涉及算法 记录    01 2026-09-13 大厂编码规范调研：我这学期要遵守的编码规则 —（调研篇） 阅读   02 2026-10-13 分治法求第k小的数 分治、快速选择 阅读">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-09-12T18:50:00.000Z">
-<meta property="article:modified_time" content="2026-09-13T02:44:13.633Z">
+<meta property="article:modified_time" content="2026-10-13T14:02:02.897Z">
 <meta property="article:author" content="Gerate Guo">
 <meta property="article:tag" content="blog, photography, projects">
 <meta name="twitter:card" content="summary">
@@ -75,7 +75,119 @@
     <link rel="stylesheet" href="/my-blog/css/noscript.css">
   </noscript>
 <link rel="stylesheet" href="/my-blog/css/liquid-glass.css">
-<link rel="alternate" href="/my-blog/atom.xml" title="Gerate's Blog" type="application/atom+xml">
+<style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style><link rel="alternate" href="/my-blog/atom.xml" title="Gerate's Blog" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
@@ -176,7 +288,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/my-blog/archives/">
-          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-count">4</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -186,7 +298,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/my-blog/tags/">
-        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-count">12</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -250,10 +362,10 @@
 </tr>
 <tr>
 <td align="left">02</td>
-<td align="left">待更新</td>
-<td align="left">—</td>
-<td align="left">—</td>
-<td align="left">—</td>
+<td align="left">2026-10-13</td>
+<td align="left"><a href="/my-blog/2026/10/13/Algorithm-Quickselect-kth-Smallest/">分治法求第k小的数</a></td>
+<td align="left">分治、快速选择</td>
+<td align="left"><a href="/my-blog/2026/10/13/Algorithm-Quickselect-kth-Smallest/">阅读</a></td>
 </tr>
 </tbody></table>
 <!-- 每写完一篇，把标题和链接补到上面这张表里 -->
